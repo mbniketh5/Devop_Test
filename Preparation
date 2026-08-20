@@ -4,6 +4,10 @@ chat-ASPICE-Ai studio -project structure
 Health Insurance Portability and Accountability Act (HIPAA)-project ->project structure 
 (folder structure->aws->maven->jenkins(ci/cd)->terraform(IAM)->docker(image)/container-k8)
 .....................................
+scripting language-automation
+python
+bash acript
+..................
 UT/IT- test spec- automation -ci/cd process
 
 ...................
