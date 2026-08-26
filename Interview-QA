@@ -1,3 +1,18 @@
 what type of scaling in aws? --> 2 type of a)horizotal b)vertical 
 aws support ->horital scaling 
 what to change the instamve type -> stop instance ->go to action->instance setting->
+...................................
+ci -continouse integration (code merged frequently)
+cd -continouse deployment (automated release)
+pipeline- automated build -test-deploy flow
+artifact- built package(jar,image,war)
+docker - containerization platform 
+image - blueprint of container
+container - running instance of image
+kubernates- container orchestration system
+pod -small deployable units in k8s
+deployment- manages pod replica
+terraform- infrastructre as code tool
+state file - current infra snapshot
+prometheus - metric collection
+grafana - metrics visualization
