@@ -33,4 +33,10 @@ alias
 ping google.com
 ifconfig
 ipconfig
+sudo apt update 
+..........
+unit test
+virtual env- source venv/bin/activate  
+run -> py.test <file_name> 
+show result -> py.test -k <module_name> -v -s 
 
