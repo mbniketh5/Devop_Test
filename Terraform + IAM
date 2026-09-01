@@ -1,0 +1,9 @@
+cd terraform
+
+terraform init
+
+terraform plan \
+  -var="ecr_repository_arn=YOUR_ECR_REPOSITORY_ARN"
+
+terraform apply \
+  -var="ecr_repository_arn=YOUR_ECR_REPOSITORY_ARN"
