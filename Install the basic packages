@@ -4,7 +4,7 @@ sudo apt install -y \
     openjdk-17-jdk \
     maven \
     docker.io
-
+sudo apt install tomcat10 -y
 sudo systemctl enable docker
 sudo systemctl start docker
 
