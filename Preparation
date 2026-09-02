@@ -23,20 +23,23 @@ browse-> naukri
       ->devops group
 ............
 daily command
-ps
-top
-ssh
-free
-htop
-crontab -e 
-alias
-ping google.com
-ifconfig
-ipconfig
-sudo apt update 
+ps top ssh free htop crontab -e alias ping google.com
+ifconfig ipconfig sudo apt update 
 ..........
 unit test
 virtual env- source venv/bin/activate  
 run -> py.test <file_name> 
 show result -> py.test -k <module_name> -v -s 
+.....................
+facing issue/trouble-shoot 
+1)in HIPAA project->after install java,mvn,tomcat -mvn build is done generate .war file after check web portal-401 eror 
+ ->we did mvn clean package-rm old file from webapp and again copy new .war file and webapp-tomcat server path -restart tomcat10
+server 
+2)mvn clean packege-flow make as bash script using .sh ->here issue -pom.xml outside the directory .sh-to change in bash script,
+ -ad outside pom.xml path in bash script
+3)mvn automation bash script run effect on -tomcat server -buil time - tomcat server getting fail - to run cmd <sudo journalctl -xeu tomcat10.service> get exact issue -some library 
+deleted -- so uninstall tomcat server cmd- sudo systemctl stop tomcat10
+sudo apt purge tomcat10 -y
+sudo apt autoremove -y
+sudo rm -rf /usr/share/tomcat10 /etc/tomcat10 /var/lib/tomcat10 /usr/libexec/tomcat10 -agin re-install cmd <sudo apt install tomcat10 -y
 
