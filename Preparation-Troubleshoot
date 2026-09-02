@@ -42,4 +42,6 @@ deleted -- so uninstall tomcat server cmd- sudo systemctl stop tomcat10
 sudo apt purge tomcat10 -y
 sudo apt autoremove -y
 sudo rm -rf /usr/share/tomcat10 /etc/tomcat10 /var/lib/tomcat10 /usr/libexec/tomcat10 -agin re-install cmd <sudo apt install tomcat10 -y
-
+4)Unit test-python py.test job build in jenkins run- jenkins api-token authentication issue -not resloved
+5)unit test- python py.test- githubaction in github -to write the the groovey script in github- clone into aws-server
+ -after changes in sc- git status-commit-git push origin- goto-githubaction run the job-succeed -automation done
