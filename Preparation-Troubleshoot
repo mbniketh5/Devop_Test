@@ -45,3 +45,22 @@ sudo rm -rf /usr/share/tomcat10 /etc/tomcat10 /var/lib/tomcat10 /usr/libexec/tom
 4)Unit test-python py.test job build in jenkins run- jenkins api-token authentication issue -not resloved
 5)unit test- python py.test- githubaction in github -to write the the groovey script in github- clone into aws-server
  -after changes in sc- git status-commit-git push origin- goto-githubaction run the job-succeed -automation done
+6)401 error -> inside webapp/ no WEB-INF folder web.xml absent so this error - after adding source code web.xml and 
+index.jsp outside the webapp ->mv to webapp folder -error reslove
+7)after web-port run -get 501 error- this java version mismatched , old java jdk17 - need to indstall java21 -with upgrade
+same congigure -<sudo update-alternatives --config java> <restart srerver> - error resloved
+8)if localy we will check webportal work or not rum cmd curl with url -<curl http://35.95.17.36:8080/hipaa-demo/>
+to show -what in index.jsp contetnt - if this file empty - should add source code 
+9) if mvn clean stage - server file deleted- manual we shold add -create directory 
+if webapps path is deleted -re create
+# Recreate the webapps directory
+sudo mkdir -p /var/lib/tomcat10/webapps
+
+# Set correct ownership (Tomcat usually runs as 'tomcat' user)
+sudo chown -R tomcat:tomcat /var/lib/tomcat10/webapps
+
+# Copy your WAR file again
+sudo cp /home/ubuntu/target/hipaa-demo.war /var/lib/tomcat10/webapps/
+
+# Restart Tomcat
+
