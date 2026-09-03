@@ -16,3 +16,58 @@ terraform- infrastructre as code tool
 state file - current infra snapshot
 prometheus - metric collection
 grafana - metrics visualization
+===========================================================
+What is the importance of DevOps in the Software Development Life Cycle (SDLC)?
+ DevOps is important in the SDLC because it integrates development and operations into a continuous lifecycle. 
+It enables faster releases through CI/CD, improves quality with automated testing and monitoring, and fosters collaboration 
+by breaking down silos. By emphasizing automation, shared ownership, and continuous feedback, DevOps ensures software is delivered reliably, 
+securely, and at scale — aligning technical outcomes with business goals.
+1.How is CI achieved?
+"Continuous Integration (CI) is achieved by automating the build and test process so that 
+every code commit is integrated into a shared repository and validated immediately.
+-Developers push code to GitHub/GitLab.
+-A CI tool (Jenkins, GitHub Actions) triggers automated builds.
+-Unit tests, integration tests, and static code analysis run automatically.
+
+2.How do you ensure security and compliance in CI/CD?
+
+3.How does containerization work in deployments?
+
+4.Explain Blue-Green deployment.
+
+5.What is self-healing in Kubernetes?
+
+6.How would you troubleshoot an unreachable pod?
+
+7.What are the use cases of Ansible?
+
+8.Explain Infrastructure as Code (IaC).
+
+9.What happens when you run "terraform init"?
+
+10.What are the different Linux distributions?
+
+11.How do you check the performance of a Linux server?
+
+12.What commands do you use to troubleshoot network issues in Linux?
+
+13.What kind of Bash scripts have you used in your project?
+
+14.What AWS services have you worked with?
+
+15.Have you used both CloudFormation and Terraform?
+
+16.What is the difference between CloudFormation and Terraform?...
+
+17. What is the difference between CloudFormation and Terraform? Which is better?
+
+18.If you are working specifically with AWS, which would you choose: CloudFormation or Terraform?.
+
+19. Write a simple Dockerfile for a Node.js application.
+
+20. How would you write the same Dockerfile using a multi-stage build?
+
+21. Can you create a Jenkins pipeline for building and deploying the Docker image?
+
+22. If an application is deployed to EKS and a pod fails, how would you investigate it?
+
