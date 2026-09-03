@@ -64,4 +64,5 @@ sudo chown -R tomcat:tomcat /var/lib/tomcat10/webapps
 sudo cp /home/ubuntu/target/hipaa-demo.war /var/lib/tomcat10/webapps/
 
 # Restart Tomcat
-
+10) terraform installtion +githubaction -jobbuild error -once terraform folder structure is done after -init terraform 
+apply terraform - once github groovy script done -run the githubaction
