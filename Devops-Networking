@@ -9,7 +9,7 @@ why need vpn for devop -stronger security protocol
 Devops-Netwok command +++++
 ping - ping google.com
 traceroute - traceroute google.com
-Netsat - netsat -a (network list)
-Netsat - netsat -tulnp (network list -ip port list)
+Netsat - netstat -a (network list)
+Netsat - netstat -tulnp (network list -ip port list)
 dig - dig google.com
 ipef - ipef -s 
