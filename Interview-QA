@@ -70,4 +70,6 @@ every code commit is integrated into a shared repository and validated immediate
 21. Can you create a Jenkins pipeline for building and deploying the Docker image?
 
 22. If an application is deployed to EKS and a pod fails, how would you investigate it?
+.............................................
+python tutorial- https://youtu.be/wJxTcJNykYc?list=PL7kXAf0BmEqswcMXsq248Sih9oPBNlzSs
 
