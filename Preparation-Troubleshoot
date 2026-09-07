@@ -66,3 +66,6 @@ sudo cp /home/ubuntu/target/hipaa-demo.war /var/lib/tomcat10/webapps/
 
 10) terraform installtion +githubaction -jobbuild error -once terraform folder structure is done after -init terraform 
 apply terraform - once github groovy script done -run the githubaction
+11(docker file->script need .war and java
+java version chnage -build docker file -cmd
+-disck space issue -rem temp file -terrafoem ,swap memory -volume increse (ec2)-df -h
