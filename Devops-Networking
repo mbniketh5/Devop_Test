@@ -5,3 +5,11 @@ Networking Basics
 3)vpn -virtual private network
 why need vpn for devop -stronger security protocol
 -to control activite
+----------------------------
+Devops-Netwok command +++++
+ping - ping google.com
+traceroute - traceroute google.com
+Netsat - netsat -a (network list)
+Netsat - netsat -tulnp (network list -ip port list)
+dig - dig google.com
+ipef - ipef -s 
