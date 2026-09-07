@@ -72,4 +72,13 @@ every code commit is integrated into a shared repository and validated immediate
 22. If an application is deployed to EKS and a pod fails, how would you investigate it?
 .............................................
 python tutorial- https://youtu.be/wJxTcJNykYc?list=PL7kXAf0BmEqswcMXsq248Sih9oPBNlzSs
+==Ntwork concept -https://youtu.be/M9Kex1ID7GY
+Networking Basics
+1)OSI model - TCP/IP layer
+2)DNS - domain name service
+3)vpn -virtual private network
+why need vpn for devop -stronger security protocol
+-to control activite
+
+-
 
