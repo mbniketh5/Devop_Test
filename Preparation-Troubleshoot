@@ -66,6 +66,101 @@ sudo cp /home/ubuntu/target/hipaa-demo.war /var/lib/tomcat10/webapps/
 
 10) terraform installtion +githubaction -jobbuild error -once terraform folder structure is done after -init terraform 
 apply terraform - once github groovy script done -run the githubaction
-11(docker file->script need .war and java
-java version chnage -build docker file -cmd
--disck space issue -rem temp file -terrafoem ,swap memory -volume increse (ec2)-df -h
+11 docker file configuration->script need .war and java version
+  script-
+FROM tomcat:10.1-jdk21-openjdk
+COPY target/hipaa-demo.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh","run"]
+-java version chnage -> change the dockerfile (version) = run docker file -cmd <docker build -t hipaa-tomcat10 .>
+-getting disc-space issue -rem temp file 
+-Create in EC2 - volume → Actions → Attach volume.
+-Choose your instance ID and device name 
+
+Move Docker Storage to /data
+Stop Docker service
+
+bash
+sudo systemctl stop docker
+Move Docker data
+
+bash
+sudo mv /mnt/docker /data/docker
+Create symlink
+
+bash
+sudo ln -s /data/docker /mnt/docker
+Restart Docker
+
+bash
+sudo systemctl start docker
+Verify new root directory
+
+bash
+docker info | grep "Docker Root Dir"
+It should now show /data/docker.
+
+.............
+Permanent Fix: Move containerd storage
+Stop Docker service
+
+bash
+sudo systemctl stop docker
+Move containerd data to /data
+
+bash
+sudo mv /var/lib/containerd /data/containerd
+sudo ln -s /data/containerd /var/lib/containerd
+Restart Docker
+
+bash
+sudo systemctl start docker
+Verify space usage
+
+bash
+df -h
+You should now see /data handling both Docker and containerd storage.
+
+Rebuild image
+
+bash
+docker build -t hipaa-tomcat10 .
+
+once docker build images then we will run 
+<docker run -d -p 8081:8080 hipaa-tomcat10>
+docker conatiner with port 8080 if alreday used 8080
+you can use 8081 -add inbond rule 
+then after EC2 instance public_ip<8081> check in web-application will present
+
+
+k8s
+
+3 yaml
+kubectl --classic installation
+minikube installtion 
+less space 
+move to minikude to /data
+minikube delete
+sudo mkdir -p /data/minikube
+sudo chown $USER:$USER /data/minikube
+minikube start --driver=docker --root=/data/minikube --disk-size=10g --memory=2048
+
+export MINIKUBE_HOME=/data/minikube
+minikube start --driver=docker --disk-size=10g --memory=2048
+kubectl cluster-info
+kubectl get nodes
+
+kubectl apply -f namespace.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+verify the pods-
+............................
+kubectl get ns
+kubectl get pods -n hipaa-project
+kubectl get svc -n hipaa-project
+...............
+Error: Failed to fetch http://us-west-2.ec2.archive.ubuntu.com/ubuntu/dists/resolute-updates/main/binary-amd64v3/Packages  404  Not Found [IP: 34.210.25.51 80]
+--is either temporarily unavailable or misconfigured. 
+It’s not a space issue anymore — it’s a repository problem.
+
