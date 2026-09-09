@@ -8,7 +8,7 @@ scripting language-automation
 python
 bash acript
 ..................
-UT/IT- test spec- automation -ci/cd process->github or jenkins
+UT/IT- test spec- automation -ci/cd process->githubaction or jenkins
 
 ...................
 Resume -edit- 50% 
@@ -28,7 +28,7 @@ ps top ssh free htop crontab -e alias ping google.com
 ifconfig ipconfig sudo apt update 
 ..........
 unit test
-virtual env- source venv/bin/activate  
+after python installed->virtual env- source venv/bin/activate  
 run -> py.test <file_name> 
 show result -> py.test -k <module_name> -v -s 
 .....................
@@ -37,7 +37,7 @@ facing issue/trouble-shoot
  ->we did mvn clean package-rm old file from webapp and again copy new .war file and webapp-tomcat server path -restart tomcat10
 server 
 2)mvn clean packege-flow make as bash script using .sh ->here issue -pom.xml outside the directory .sh-to change in bash script,
- -ad outside pom.xml path in bash script
+ -ad outside pom.xml path in bash script <~cd>
 3)mvn automation bash script run effect on -tomcat server -buil time - tomcat server getting fail - to run cmd <sudo journalctl -xeu tomcat10.service> get exact issue -some library 
 deleted -- so uninstall tomcat server cmd- sudo systemctl stop tomcat10
 sudo apt purge tomcat10 -y
@@ -46,7 +46,7 @@ sudo rm -rf /usr/share/tomcat10 /etc/tomcat10 /var/lib/tomcat10 /usr/libexec/tom
 4)Unit test-python py.test job build in jenkins run- jenkins api-token authentication issue -not resloved
 5)unit test- python py.test- githubaction in github -to write the the groovey script in github- clone into aws-server
  -after changes in sc- git status-commit-git push origin- goto-githubaction run the job-succeed -automation done
-*6)401 error -> inside webapp/ no WEB-INF folder web.xml absent so this error - after adding source code web.xml and 
+*1)6)401 error -> inside webapp/ no WEB-INF folder web.xml absent so this error - after adding source code web.xml and 
 index.jsp outside the webapp ->mv to webapp folder -error reslove
 7)after web-port run -get 501 error- this java version mismatched , old java jdk17 - need to indstall java21 -with upgrade
 same congigure -<sudo update-alternatives --config java> <restart srerver> - error resloved
@@ -64,16 +64,17 @@ sudo chown -R tomcat:tomcat /var/lib/tomcat10/webapps
 sudo cp /home/ubuntu/target/hipaa-demo.war /var/lib/tomcat10/webapps/
 # Restart Tomcat
 
-10) terraform installtion +githubaction -jobbuild error -once terraform folder structure is done after -init terraform 
-apply terraform - once github groovy script done -run the githubaction
-11 docker file configuration->script need .war and java version
+10) terraform installtion +githubaction -jobbuild error -once terraform folder structure is done after -init terraform &
+-apply terraform - once github groovy script done -run the githubaction
+*11) docker file configuration->script need .war and java version
   script-
 FROM tomcat:10.1-jdk21-openjdk
 COPY target/hipaa-demo.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 CMD ["catalina.sh","run"]
--java version chnage -> change the dockerfile (version) = run docker file -cmd <docker build -t hipaa-tomcat10 .>
--getting disc-space issue -rem temp file 
+
+*12)-java version chnage -> change the dockerfile (version) = run docker file -cmd <docker build -t hipaa-tomcat10 .>
+getting disc-space issue -rem temp file 
 -Create in EC2 - volume → Actions → Attach volume.
 -Choose your instance ID and device name 
 
