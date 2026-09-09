@@ -164,8 +164,11 @@ kubectl get svc -n hipaa-project
 Error: Failed to fetch http://us-west-2.ec2.archive.ubuntu.com/ubuntu/dists/resolute-updates/main/binary-amd64v3/Packages  404  Not Found [IP: 34.210.25.51 80]
 --is either temporarily unavailable or misconfigured. 
 It’s not a space issue anymore — it’s a repository problem.
+=error the error in your screenshot means your workflow is using an outdated version of the actions/upload-artifact action. GitHub deprecated v3 in April 2024, so any workflow referencing it 
+will fail automatically.
 .......
 unit-test-python 
 install python -after install env = <apt install python3.14-venv> next <python3 -m venv venv>
 -run <source venv/bin/activate> python-virtul env open
-
+sudo apt install python3-pytest = install pytest for run pytest test case
+error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the module hipaa_demo.
