@@ -164,4 +164,8 @@ kubectl get svc -n hipaa-project
 Error: Failed to fetch http://us-west-2.ec2.archive.ubuntu.com/ubuntu/dists/resolute-updates/main/binary-amd64v3/Packages  404  Not Found [IP: 34.210.25.51 80]
 --is either temporarily unavailable or misconfigured. 
 It’s not a space issue anymore — it’s a repository problem.
+.......
+unit-test-python 
+install python -after install env = <apt install python3.14-venv> next <python3 -m venv venv>
+-run <source venv/bin/activate> python-virtul env open
 
