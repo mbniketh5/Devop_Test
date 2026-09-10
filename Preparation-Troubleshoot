@@ -172,3 +172,4 @@ install python -after install env = <apt install python3.14-venv> next <python3 
 -run <source venv/bin/activate> python-virtul env open
 sudo apt install python3-pytest = install pytest for run pytest test case
 error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the module hipaa_demo.
+-git pull origin main --rebase
