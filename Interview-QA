@@ -79,6 +79,21 @@ Networking Basics
 3)vpn -virtual private network
 why need vpn for devop -stronger security protocol
 -to control activite
+...................
+1)cloud migration
+ how you migrated application or infractured to the cloud and also know 
+about different deployment stratergy 
 
--
+2)containerization
+container and microserver architecture using docker /k82
+
+3)infrastructure as code -how you use tool like terraform
+to create infrastrcure as on to cloud
+
+4)how you intergrate secuirity in devops workflows
+
+5)how you do automation -testing /building /deploying application 
+using cicd -scripting 
+
+6)cost optimization -how to reduce the bill 
 
