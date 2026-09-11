@@ -133,12 +133,21 @@ GitHub deprecated v3 in April 2024, so any workflow referencing it will fail a
 sudo apt install python3-pytest = install pytest for run pytest test case
 error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the
 module hipaa_demo.=error=inside hippa-demo folder no source code /requirement
-18)
--git pull origin main --rebase
-
+18) intial we have to testing folde structure like 
+hipaa-demo/
+ ├── src/                # your Java source code
+ ├── tests/              # Python test suite
+ │    ├── test_auth.py
+ │    ├── test_api.py
+ │    ├── test_crypto.py
+ │    └── test_audit.py
+ ├── requirements.txt    # Python dependencies
+ └── .github/workflows/
+      └── python-tests.yml
+inside .py file store source code - mannually we need run test file ->we get to know test case pass or fail 
+then move to github ->create folder structure like .github/workflows/test-demo-insdie we write yamal script 
+then ec2 instance to do -git clone with test-demo and add hippa-demo file
 Your repo should look like this:
-
-Code
 pytest_demo/
  ├── hipaa_demo/
  │    ├── __init__.py
@@ -153,5 +162,6 @@ pytest_demo/
  │    └── test_crypto.py
  ├── requirements.txt
  └── .github/workflows/python-tests.yml
-then do <git push orgin >
+then do <git push orgin > = error = 
+run <-git pull origin main --rebase>
 once done - goto github action run the job ->automation done ci/cd 
