@@ -173,3 +173,21 @@ install python -after install env = <apt install python3.14-venv> next <python3 
 sudo apt install python3-pytest = install pytest for run pytest test case
 error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the module hipaa_demo.
 -git pull origin main --rebase
+
+Your repo should look like this:
+
+Code
+pytest_demo/
+ ├── hipaa_demo/
+ │    ├── __init__.py
+ │    ├── api.py
+ │    ├── auth.py
+ │    ├── audit.py
+ │    └── crypto.py
+ ├── tests/
+ │    ├── test_api.py
+ │    ├── test_auth.py
+ │    ├── test_audit.py
+ │    └── test_crypto.py
+ ├── requirements.txt
+ └── .github/workflows/python-tests.yml
