@@ -76,96 +76,56 @@ CMD ["catalina.sh","run"]
 *12)-java version chnage -> change the dockerfile (version) = run docker file -cmd <docker build -t hipaa-tomcat10 .>
 getting disc-space issue -rem temp file 
 -Create in EC2 - volume → Actions → Attach volume.
--Choose your instance ID and device name 
-
-Move Docker Storage to /data
-Stop Docker service
-
-bash
-sudo systemctl stop docker
-Move Docker data
-
-bash
-sudo mv /mnt/docker /data/docker
-Create symlink
-
-bash
-sudo ln -s /data/docker /mnt/docker
-Restart Docker
-
-bash
-sudo systemctl start docker
-Verify new root directory
-
-bash
-docker info | grep "Docker Root Dir"
+-Choose your instance ID and device name -once vloume added 
+need to Move Docker Storage to /data (/data is the new volum)
+-Stop Docker service <sudo systemctl stop docker>
+Move Docker data <sudo mv /mnt/docker /data/docker>
+Create symlink <sudo ln -s /data/docker /mnt/docker>
+Restart Docker <sudo systemctl start docker>
+Verify new root directory <docker info | grep "Docker Root Dir">
 It should now show /data/docker.
-
 .............
-Permanent Fix: Move containerd storage
-Stop Docker service
-
-bash
-sudo systemctl stop docker
-Move containerd data to /data
-
-bash
-sudo mv /var/lib/containerd /data/containerd
-sudo ln -s /data/containerd /var/lib/containerd
-Restart Docker
-
-bash
-sudo systemctl start docker
-Verify space usage
-
-bash
-df -h
+Permanent Fix: Move containerd storage -we create continer for this issue
+Stop Docker service <sudo systemctl stop docker>
+Move containerd data to /data  <sudo mv /var/lib/containerd /data/containerd>
+<sudo ln -s /data/containerd /var/lib/containerd>
+Restart Docker <sudo systemctl start docker>
+Verify space usage <df -h>
 You should now see /data handling both Docker and containerd storage.
 
-Rebuild image
-
-bash
-docker build -t hipaa-tomcat10 .
-
-once docker build images then we will run 
-<docker run -d -p 8081:8080 hipaa-tomcat10>
-docker conatiner with port 8080 if alreday used 8080
+13)Rebuild image <docker build -t hipaa-tomcat10 .>
+-once docker build images then we will run <docker run -d -p 8081:8080 hipaa-tomcat10>
+14)docker conatiner with port 8080 if alreday used 8080
 you can use 8081 -add inbond rule 
 then after EC2 instance public_ip<8081> check in web-application will present
-
-
-k8s
-
-3 yaml
-kubectl --classic installation
-minikube installtion 
-less space 
+...
+14)k8s we will do k8s configuration
+need to write 3 yaml script -namespace.yaml /-deployment.yaml /-service.yaml
+kubectl --classic installation and minikube installtion 
+less space error getting 
 move to minikude to /data
-minikube delete
-sudo mkdir -p /data/minikube
-sudo chown $USER:$USER /data/minikube
-minikube start --driver=docker --root=/data/minikube --disk-size=10g --memory=2048
-
-export MINIKUBE_HOME=/data/minikube
-minikube start --driver=docker --disk-size=10g --memory=2048
-kubectl cluster-info
-kubectl get nodes
-
-kubectl apply -f namespace.yaml
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-
-verify the pods-
+1st minikube delete then after we make one directory for minikube <sudo mkdir -p /data/minikube>
+give ownership <sudo chown $USER:$USER /data/minikube>
+<minikube start --driver=docker --root=/data/minikube --disk-size=10g --memory=2048>
+<export MINIKUBE_HOME=/data/minikube>
+15)<minikube start --driver=docker --disk-size=10g --memory=2048>
+then check kubernites info- created or not <kubectl cluster-info>
+check nod <kubectl get nodes>
+run cmd for 3 yaml script 
+<kubectl apply -f namespace.yaml>
+<kubectl apply -f deployment.yaml>
+<kubectl apply -f service.yaml>
+-verify the pods-
 ............................
 kubectl get ns
 kubectl get pods -n hipaa-project
 kubectl get svc -n hipaa-project
 ...............
-Error: Failed to fetch http://us-west-2.ec2.archive.ubuntu.com/ubuntu/dists/resolute-updates/main/binary-amd64v3/Packages  404  Not Found [IP: 34.210.25.51 80]
+16)Error: Failed to fetch http://us-west-2.ec2.archive.ubuntu.com/ubuntu/dists/resolute-updates/main/binary-amd64v3/Packages  404  Not Found [IP: 34.210.25.51 80]
 --is either temporarily unavailable or misconfigured. 
 It’s not a space issue anymore — it’s a repository problem.
-=error the error in your screenshot means your workflow is using an outdated version of the actions/upload-artifact action. GitHub deprecated v3 in April 2024, so any workflow referencing it 
-will fail automatically.
+=error the error in your screenshot means your workflow is using an outdated version of the actions/upload-artifact action.
+GitHub deprecated v3 in April 2024, so any workflow referencing it will fail automatically.
 .......
 unit-test-python 
 install python -after install env = <apt install python3.14-venv> next <python3 -m venv venv>
