@@ -127,11 +127,13 @@ It’s not a space issue anymore — it’s a repository problem.
 =error the error in your screenshot means your workflow is using an outdated version of the actions/upload-artifact action.
 GitHub deprecated v3 in April 2024, so any workflow referencing it will fail automatically.
 .......
-unit-test-python 
-install python -after install env = <apt install python3.14-venv> next <python3 -m venv venv>
+17)unit-test-python-.py-githubaction CI/CD process 
+1st we install python -after install env = <apt install python3.14-venv> next <python3 -m venv venv>
 -run <source venv/bin/activate> python-virtul env open
 sudo apt install python3-pytest = install pytest for run pytest test case
-error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the module hipaa_demo.
+error -The terminal output shows that pytest failed to collect tests from test_api.py because Python couldn’t find the
+module hipaa_demo.=error=inside hippa-demo folder no source code /requirement
+18)
 -git pull origin main --rebase
 
 Your repo should look like this:
