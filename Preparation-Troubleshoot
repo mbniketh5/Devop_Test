@@ -191,3 +191,5 @@ pytest_demo/
  │    └── test_crypto.py
  ├── requirements.txt
  └── .github/workflows/python-tests.yml
+then do <git push orgin >
+once done - goto github action run the job ->automation done ci/cd 
