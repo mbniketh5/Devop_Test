@@ -11,7 +11,7 @@ bash acript
 UT/IT- test spec- automation -ci/cd process->githubaction or jenkins
 
 ...................
-Resume -edit- 50% 
+*Resume -edit-| case-study-add(project base)|
   ->project 
   ->technical skill
 ..................
@@ -24,7 +24,7 @@ browse-> naukri
       ->devops group
 ............
 daily command
-ps top ssh free htop crontab -e alias ping google.com
+ps |top |ssh |free| htop| crontab -e alias ping google.com
 ifconfig ipconfig sudo apt update 
 ..........
 unit test
