@@ -1,6 +1,7 @@
 ==Ntwork concept -https://youtu.be/M9Kex1ID7GY
 Networking Basics
 1)OSI model - TCP/IP layer
+physical/datalink/network/transport/session/presentation/acceptance
 2)DNS - domain name service
 3)vpn -virtual private network
 why need vpn for devop -stronger security protocol
@@ -9,7 +10,7 @@ why need vpn for devop -stronger security protocol
 Devops-Netwok command +++++
 ping - ping google.com
 traceroute - traceroute google.com
-Netsat - netstat -a (network list)
-Netsat - netstat -tulnp (network list -ip port list)
+Netstat - netstat -a (network list)
+Netstat - netstat -tulnp (network list -ip port list)
 dig - dig google.com
 ipef - ipef -s 
