@@ -1,6 +1,6 @@
 what type of scaling in aws? --> 2 type of a)horizotal b)vertical 
 aws support ->horital scaling 
-what to change the instamve type -> stop instance ->go to action->instance setting->
+what to change the instance type -> stop instance ->go to action->instance setting->
 ...................................
 ci -continouse integration (code merged frequently)
 cd -continouse deployment (automated release)
